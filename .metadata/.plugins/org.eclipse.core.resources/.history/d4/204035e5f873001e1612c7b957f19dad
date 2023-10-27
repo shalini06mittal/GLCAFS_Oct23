@@ -1,0 +1,32 @@
+package com.stack;
+
+import java.util.Stack;
+
+public class StackDemo {
+
+	public static void main(String[] args) {
+		// FILO
+		
+		Stack<Integer> numbers = new Stack<Integer>();
+		numbers.add(1);
+		numbers.add(4);
+		numbers.add(2);
+		numbers.add(6);
+		numbers.add(3);
+		System.out.println(numbers.peek());
+		System.out.println(numbers);
+		System.out.println(numbers.pop());
+		System.out.println(numbers);
+		Stack<Integer> numbers1 = numbers;
+		numbers1.add(100);
+		System.out.println(numbers);
+		System.out.println(numbers1);
+		
+		Stack<Integer> numbers2 = (Stack<Integer>) numbers.clone();
+		numbers2.add(10);
+		System.out.println(numbers);
+		System.out.println(numbers1);
+		System.out.println(numbers2);
+	}
+
+}

@@ -1,0 +1,31 @@
+package com.annotations;
+
+
+class A
+{
+	public void m1() {
+		
+	}
+}
+
+class B extends A{
+
+	/**
+	 * small piece of information to the compiler or the JVM
+	 * that tells about the identifiers being used
+	 */
+	@Override
+	public void m1() {
+		// TODO Auto-generated method stub
+		super.m1();
+	}
+}
+
+public class AnnotationsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

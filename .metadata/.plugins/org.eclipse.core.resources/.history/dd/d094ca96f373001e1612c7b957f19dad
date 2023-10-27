@@ -1,0 +1,56 @@
+package com.list;
+
+import java.util.Scanner;
+
+public class Parkour {
+
+	// 1. Declare all the required variables here
+	int heights;
+	int[] arr = {3,8,9,8,10,11};
+	int max = 0, xor=0, i=0, j= 0;
+	Scanner sc = new Scanner(System.in);
+	// 2. method to implement the logic
+	void operations() {
+		// 1. loop to find the index of last element in the array where parkour stops
+		//jumping, j is used.
+		for(j = 0; j<arr.length-1;j++) {
+			if(arr[j]>=arr[j+1]) {
+				break;
+			}
+		}
+		// 2. loop till last but one building height.
+		for(int k = 0;k<j;k++) {
+			i=k;
+			xor = 0;
+			// find the xor of all the buildings from i to j
+			while(i<j) {
+				// 1. when i==k, perform xor of first two numbers
+				if(i == k){
+					System.out.println("xor of "+arr[i]+" and "+arr[i+1]+" is:
+							"+(arr[i]^arr[i+1]));
+							xor = arr[i]^arr[i+1];
+					i++;
+				} // 2. when i
+				//!= k perform xor of variable(xor) and arr[i+1]
+						else {
+							System.out.println("xor of "+xor+" and "+arr[i+1]+" is:
+									"+(xor^arr[i+1]));
+									xor = xor^arr[i+1];
+							i++;
+						}
+			} // compare and update the max energy from previous max
+			if(xor>max) {
+				max = xor;
+			}
+			System.out.println("----------------------------------");
+		}
+	}
+	public static void main(String[] args) {
+		// 1. Create object
+		Parkour obj = new Parkour();
+		// 2. Implement method
+		obj.operations();
+		// 3. Print the max energy consumed
+		System.out.println("max is: "+obj.max);
+	}
+}

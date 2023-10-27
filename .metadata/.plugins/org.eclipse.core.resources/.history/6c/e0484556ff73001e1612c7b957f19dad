@@ -1,0 +1,47 @@
+package com.set;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class SetDemo {
+
+	/**
+	 * set do not support indexing
+	 * sets do not allow duplicates
+	 */
+	public static void main(String[] args) {
+		Set<Integer> nos = new HashSet<Integer>();
+		nos.add(10);
+		nos.add(100);
+		nos.add(1);
+		nos.add(80);
+		nos.add(10);
+		nos.add(50);
+		nos.add(5);
+		nos.add(3);
+		Iterator<Integer> data = nos.iterator();
+		while(data.hasNext())
+			System.out.println(data.next());
+		
+		for(Integer n : nos)
+			System.out.println(n);
+		
+		Set<Integer> nos1 = new TreeSet<Integer>();
+		nos1.add(10);
+		nos1.add(100);
+		nos1.add(1);
+		nos1.add(80);
+		nos1.add(10);
+		nos1.add(50);
+		nos1.add(5);
+		nos1.add(3);
+		
+		System.out.println();
+		for(Integer n : nos1)
+			System.out.println(n);
+
+	}
+
+}
