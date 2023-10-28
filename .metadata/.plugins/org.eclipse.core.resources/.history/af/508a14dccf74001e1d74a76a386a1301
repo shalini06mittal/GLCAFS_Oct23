@@ -1,0 +1,5 @@
+package anno;
+
+public enum Size {
+
+}

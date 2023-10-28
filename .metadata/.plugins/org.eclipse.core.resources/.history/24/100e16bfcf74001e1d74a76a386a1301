@@ -1,0 +1,13 @@
+package anno;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
+enum Size{
+	SMALL, LARGE
+}
+
+@Target(ElementType.TYPE_USE)
+public @interface ReadOnly {
+
+}

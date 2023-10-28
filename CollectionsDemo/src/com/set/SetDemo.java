@@ -2,6 +2,7 @@ package com.set;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
@@ -9,29 +10,37 @@ import java.util.TreeSet;
 
 import model.Employee;
 
+
 public class SetDemo {
 
 	/**
 	 * set do not support indexing
 	 * sets do not allow duplicates
 	 */
+	 
 	public static void main(String[] args) {
-//		Set<Integer> nos = new HashSet<Integer>();
-//		nos.add(10);
-//		nos.add(100);
-//		nos.add(1);
-//		nos.add(80);
-//		nos.add(10);
-//		nos.add(50);
-//		nos.add(5);
-//		nos.add(3);
-//		Iterator<Integer> data = nos.iterator();
-//		while(data.hasNext())
-//			System.out.println(data.next());
-//		
-//		for(Integer n : nos)
-//			System.out.println(n);
-//		
+		LinkedHashSet<Integer> nos = new LinkedHashSet<Integer>();
+		nos.add(10);
+		nos.add(100);
+		nos.add(1);
+		nos.add(80);
+		nos.add(10);
+		nos.add(50);
+		nos.add(5);
+		nos.add(3);
+		Iterator<Integer> data = nos.iterator();
+		while(data.hasNext())
+			System.out.println(data.next());
+		System.out.println();
+		for(Integer n : nos)
+			System.out.println(n);
+
+		
+		
+		
+		
+		
+		
 //		// will by default store the elements in naturall ordering
 //		Set<Integer> nos1 = new TreeSet<Integer>();
 //		nos1.add(10);

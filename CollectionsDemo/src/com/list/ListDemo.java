@@ -70,6 +70,7 @@ public class ListDemo {
 		fruits.add("Watermelons");
 		fruits.add("Apricot");
 		
+		
 		fruits.sort(null);
 		System.out.println(fruits);
 		System.out.println();
@@ -97,6 +98,7 @@ public class ListDemo {
 		list.add(new Employee(3, "Raju", "Mumbai", "India"));
 		list.add(new Employee(4, "Vedant", "Delhi", "India"));
 		list.add(new Employee(5, "Manas", "Chennai", "India"));
+		
 		for(Employee emp: list)
 			System.out.println(emp.getEname());
 		

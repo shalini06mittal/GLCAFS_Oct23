@@ -18,6 +18,7 @@ public class QueueDemo {
 		cities.add("Agra");
 		cities.add("Chennai");
 
+		
 		System.out.println(cities);
 		System.out.println(cities.poll());
 		System.out.println(cities.poll());

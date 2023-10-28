@@ -1,0 +1,33 @@
+package com.list;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class ListSample {
+
+	public static void main(String[] args) {
+		ArrayList<Integer> nos = new ArrayList<Integer>();
+		nos.add(10);
+		nos.add(5);
+		nos.add(3);
+		nos.add(2);
+		nos.add(10);
+		nos.add(78);
+		nos.add(5);
+		nos.add(10);
+		nos.add(1);
+
+		System.out.println(nos.size());// no of elements in hte list
+		System.out.println(nos.addAll(Arrays.asList(100,200)));
+		System.out.println(nos);
+		System.out.println(nos.addAll(3, Arrays.asList(999,777)));
+		System.out.println(nos);
+//		nos.clear();
+//		System.out.println(nos);
+		nos.remove(2);
+		System.out.println(nos);
+		
+	}
+	
+
+}
