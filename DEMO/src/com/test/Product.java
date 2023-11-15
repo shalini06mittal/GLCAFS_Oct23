@@ -1,5 +1,5 @@
 package com.test;
-
+// Comparable is used to provides the default comparison for the objects 
 public class Product implements Comparable<Product>{
 
 	private int pid;

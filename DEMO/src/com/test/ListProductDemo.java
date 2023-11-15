@@ -70,12 +70,43 @@ public class ListProductDemo {
 		for(Product p :products) {
 			System.out.println(p);
 		}
-
+		// display's the product on desc order of product id [[ default implementation]
 		products.sort(null);
-		
+		System.out.println();
 		for(Product p :products) {
 			System.out.println(p);
 		}
+		
+		// Comparator interface to customize the arrangement of the objects
+		// display the product on asc order of product price
+		products.sort(new Comparator<Product>() {
+
+			@Override
+			public int compare(Product o1, Product o2) {
+				// TODO Auto-generated method stub
+				return (int)(o1.getPrice() - o2.getPrice());
+			}
+		});
+		
+		System.out.println();
+		for(Product p :products) {
+			System.out.println(p);
+		}
+		
+		products.sort(new Comparator<Product>() {
+
+			@Override
+			public int compare(Product o1, Product o2) {
+				// TODO Auto-generated method stub
+				return o1.getPname().compareTo(o2.getPname());
+			}
+		});
+		
+		System.out.println();
+		for(Product p :products) {
+			System.out.println(p);
+		}
+		
 	}
 
 }
