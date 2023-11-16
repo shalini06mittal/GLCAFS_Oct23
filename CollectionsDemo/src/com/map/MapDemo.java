@@ -23,6 +23,7 @@ public class MapDemo {
 		 */
 		
 		Map<String, Integer> map = new HashMap<String, Integer>();
+		
 		System.out.println(map.put("K1", 1));
 		map.put("K2", 2);
 		map.put("K5", 3);
@@ -49,19 +50,32 @@ public class MapDemo {
 		System.out.println(map);
 		System.out.println(map.get("K1"));
 		
-//		System.out.println(map.compute("k2", new BiFunction<String, Integer, Integer>() {
-//
-//			@Override
-//			public Integer apply(String key, Integer value) {
-//				// TODO Auto-generated method stub
-//				System.out.println(key+" "+value);
-//				if(value == null)
-//				{
-//					return value;
-//				}
-//				return value * value;
-//			}
-//		}));
+		map.compute("K2", new BiFunction<String, Integer, Integer>() {
+
+			@Override
+			public Integer apply(String key, Integer value) {
+				// TODO Auto-generated method stub
+				System.out.println(key+" "+value);
+				if(value == null)
+				{
+					return value;
+				}
+				return value * value;
+			}
+		});
+		map.compute("K1", new BiFunction<String, Integer, Integer>() {
+
+			@Override
+			public Integer apply(String key, Integer value) {
+				// TODO Auto-generated method stub
+				System.out.println(key+" "+value);
+				if(value == null)
+				{
+					return 10;
+				}
+				return value * value;
+			}
+		});
 		
 		System.out.println(map);
 		
@@ -75,6 +89,8 @@ public class MapDemo {
 		}
 //		Map<String, String> data = new HashMap<String, String>();
 //		System.out.println(data.getOrDefault("Shalini","-----"));
+		
+		
 	}
 
 }
