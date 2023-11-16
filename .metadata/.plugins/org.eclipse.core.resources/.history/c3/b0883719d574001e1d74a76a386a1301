@@ -1,7 +1,0 @@
-package com.annotations;
-
-public class OSType {
-	
-	public static final String windows = "WINDOWS";
-	public static final String macos = "MAC";
-}
