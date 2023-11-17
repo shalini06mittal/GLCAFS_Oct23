@@ -1,6 +1,8 @@
 package com.map;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.function.BiFunction;
@@ -89,7 +91,25 @@ public class MapDemo {
 		}
 //		Map<String, String> data = new HashMap<String, String>();
 //		System.out.println(data.getOrDefault("Shalini","-----"));
+		/**
+		 * Create a list to store names of employees. The names can be repeated.
+		 * For ex: Shalini, Ajay, Shalini, Raju, Sara, Ajay, Ajay, Supriya, Sara, Shalini
+		 * Iterate over the list and store the name as key in the map and
+		 * value be the number of times name exist.
+		 * Output : {Shalini= 3, Ajay=3, Raju=1, Sara=2, Supriya=1}
+		 */
 		
+		List<String> names = new ArrayList<String>();
+		names.add("Shalini");
+		names.add("Ajay");
+		names.add("Shalini");
+		names.add("Raju");
+		names.add("Sara");
+		names.add("Ajay");
+		names.add("Ajay");
+		names.add("Supriya");
+		names.add("Sara");
+		names.add("Shalini");
 		
 	}
 
