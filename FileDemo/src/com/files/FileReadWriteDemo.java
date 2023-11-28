@@ -1,6 +1,7 @@
 package com.files;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -61,6 +62,32 @@ public class FileReadWriteDemo {
 			}
 		}
 	}
+	public static void writeToFileWithBufferedWriter(String filename) {
+		//1.
+		//File file = new File(filename);
+		FileWriter writer = null;
+		BufferedWriter  bufferedWriter = null;
+		try {
+			// writer creates the file if it doesnt exist
+			writer = new FileWriter(filename);
+			bufferedWriter  = new BufferedWriter(writer); // performance 
+			bufferedWriter.write("Hey There!!");
+			bufferedWriter.write("Welcome");
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				
+				bufferedWriter.close();
+				writer.close();// flushes and saves the content
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 	
 	public static void readFromFile(String filename) throws IOException {
 		FileReader reader = new FileReader(filename);
@@ -82,6 +109,7 @@ public class FileReadWriteDemo {
 //		writeToFile("contents.txt");
 //		writeToFileWithoutFile("dummy.txt");
 		
+		writeToFileWithBufferedWriter("buffer.txt");
 		readFromFile("contents.txt");
 	}
 
