@@ -30,6 +30,9 @@ public class FileDemo {
 		System.out.println(file.lastModified());
 		System.out.println(file.isFile());
 		System.out.println("asdlkjas");
+		
+		
+		
 //		String name, email, pwd;
 //		Scanner sc = new Scanner(System.in);
 //
