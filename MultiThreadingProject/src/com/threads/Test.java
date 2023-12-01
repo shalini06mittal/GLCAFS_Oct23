@@ -11,7 +11,7 @@ public class Test {
 			System.out.println(i*i);
 		}
 		/*
-		 * Thread 1 responsible to send cubes in a file cube.txt
+		 * Thread 2 responsible to send cubes in a file cube.txt
 		 */
 		for (int i = 1; i <=5; i++) {
 			System.out.println(i*i*i);
