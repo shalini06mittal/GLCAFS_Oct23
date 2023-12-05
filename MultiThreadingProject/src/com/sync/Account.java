@@ -25,10 +25,10 @@ public class Account {
 		this.balance = balance;
 	}
 	public void withdraw(double amount) {
-		System.out.println(Thread.currentThread().getName()+" in withdraw");
+		System.out.println(1+" "+Thread.currentThread().getName()+" in withdraw");
 		double bal = getBalance();
 		if(amount > bal) {
-			System.out.println("cannot withdraw");
+			System.out.println(2+" cannot withdraw");
 		}
 		else {
 			double rembalance = bal - amount;
@@ -40,6 +40,6 @@ public class Account {
 			}
 			setBalance(rembalance);
 		}
-		System.out.println(Thread.currentThread().getName()+" after withdraw "+balance);
+		System.out.println(3+" "+Thread.currentThread().getName()+" after withdraw "+balance);
 	}
 }
