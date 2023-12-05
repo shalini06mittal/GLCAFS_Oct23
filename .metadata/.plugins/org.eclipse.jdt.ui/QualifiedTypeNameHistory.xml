@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.annotation.Target"/>
-    <fullyQualifiedTypeName name="com.annotations.OSType"/>
-    <fullyQualifiedTypeName name="java.lang.reflect.Method"/>
-    <fullyQualifiedTypeName name="com.annotations.NativeMethods"/>
-    <fullyQualifiedTypeName name="java.lang.annotation.Annotation"/>
-    <fullyQualifiedTypeName name="com.annotations.OSystem"/>
-    <fullyQualifiedTypeName name="java.lang.annotation.Retention"/>
     <fullyQualifiedTypeName name="java.util.Stack"/>
     <fullyQualifiedTypeName name="java.util.Queue"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
@@ -60,4 +53,11 @@
     <fullyQualifiedTypeName name="java.io.Writer"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="userdefined.Account"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalThreadStateException"/>
+    <fullyQualifiedTypeName name="com.threads.TestThread"/>
+    <fullyQualifiedTypeName name="com.threads.MyThread1"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="java.lang.Runnable"/>
+    <fullyQualifiedTypeName name="com.threads.DaemonThread"/>
+    <fullyQualifiedTypeName name="com.threads.MyThread"/>
 </qualifiedTypeNameHistroy>
