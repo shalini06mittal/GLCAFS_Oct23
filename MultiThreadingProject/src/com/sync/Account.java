@@ -24,8 +24,12 @@ public class Account {
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
-	public void withdraw(double amount) {
-		System.out.println(1+" "+Thread.currentThread().getName()+" in withdraw");
+	public void display() {
+		System.out.println(Thread.currentThread().getName()+" in display");
+	}
+	public synchronized void withdraw(double amount) {
+		System.out.println(1+" "+Thread.currentThread().getName()
+				+" in withdraw");
 		double bal = getBalance();
 		if(amount > bal) {
 			System.out.println(2+" cannot withdraw");
@@ -40,6 +44,7 @@ public class Account {
 			}
 			setBalance(rembalance);
 		}
-		System.out.println(3+" "+Thread.currentThread().getName()+" after withdraw "+balance);
+		System.out.println(3+" "+Thread.currentThread().getName()
+				+" after withdraw "+balance);
 	}
 }
