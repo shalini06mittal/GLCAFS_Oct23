@@ -27,24 +27,54 @@ public class Account {
 	public void display() {
 		System.out.println(Thread.currentThread().getName()+" in display");
 	}
-	public synchronized void withdraw(double amount) {
+//	public synchronized void withdraw(double amount) {
+//		System.out.println(1+" "+Thread.currentThread().getName()
+//				+" in withdraw");
+//		
+//			double bal = getBalance();
+//			if(amount > bal) {
+//				System.out.println(2+" cannot withdraw");
+//			}
+//			else {
+//				double rembalance = bal - amount;
+//				try {
+//					Thread.sleep(1000);
+//				} catch (InterruptedException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//				setBalance(rembalance);
+//			}
+//			System.out.println(3+" "+Thread.currentThread().getName()
+//					+" after withdraw "+balance);
+//		
+//	}
+	
+	public void withdraw(double amount) {
 		System.out.println(1+" "+Thread.currentThread().getName()
 				+" in withdraw");
-		double bal = getBalance();
-		if(amount > bal) {
-			System.out.println(2+" cannot withdraw");
-		}
-		else {
-			double rembalance = bal - amount;
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		//synchronized (this) {
+			System.out.println(Thread.currentThread().getName()
+					+" sync block");
+			double bal = getBalance();
+			if(amount > bal) {
+				System.out.println(2+" cannot withdraw");
 			}
-			setBalance(rembalance);
-		}
-		System.out.println(3+" "+Thread.currentThread().getName()
-				+" after withdraw "+balance);
+			else {
+				double rembalance = bal - amount;
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				setBalance(rembalance);
+			}
+			System.out.println(3+" "+Thread.currentThread().getName()
+					+" after withdraw "+balance);
+			
+		//}
+			
+		
 	}
 }

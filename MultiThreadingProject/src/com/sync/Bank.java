@@ -15,9 +15,12 @@ public class Bank extends Thread{
 	@Override
 	public void run() {
 		System.out.println(4+" "+Thread.currentThread().getName()+" in run");
-		if(Thread.currentThread().getName().equals("T3"))
-			account.display();
-		account.withdraw(amount);
+		synchronized (account) {
+			if(Thread.currentThread().getName().equals("T3"))
+				account.display();
+			account.withdraw(amount);
+		}
+		
 		
 	}
 
