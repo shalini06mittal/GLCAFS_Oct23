@@ -1,5 +1,27 @@
 package com.interthreadcomm;
-
+/*
+ C1 is waiting
+P1 1
+C2 is waiting
+C1 1
+C2 is waiting
+C1 is waiting
+P1 2
+C1 is waiting
+C2 2
+P1 3
+C1 3
+C2 is waiting
+C1 is waiting
+P1 4
+C2 4
+C1 is waiting
+C2 is waiting
+P1 5
+C1 5
+C2 is waiting
+C1 is waiting
+ */
 public class Shop {
 
 	int num;
@@ -18,7 +40,7 @@ public class Shop {
 		}
 		this.num = i;
 		flag = true;
-		notify();
+		notifyAll();
 		
 	}
 
@@ -33,14 +55,14 @@ public class Shop {
 			}
 		}
 		flag = false;
-		notify();
+		notifyAll();
 		return num;
 	}
 	
 	public static void main(String[] args) {
 		Shop s = new Shop();
 		Consumer c1 = new Consumer(s, "C1");
-//		Consumer c2 = new Consumer(s, "C2");
+		Consumer c2 = new Consumer(s, "C2");
 		Producer p1 = new Producer(s, "P1");
 	}
 	
