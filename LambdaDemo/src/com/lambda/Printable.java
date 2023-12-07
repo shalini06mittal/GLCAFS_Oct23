@@ -11,5 +11,11 @@ public interface Printable {
 
 	public void print();
 	//public void print1();
+	default public void m1() {
+		
+	}
+	static public void m2() {
+		
+	}
 }
 
