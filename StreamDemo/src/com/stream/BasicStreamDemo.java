@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class BasicStreamDemo {
@@ -77,6 +78,7 @@ public class BasicStreamDemo {
 		// stream is closed
 		
 		strlen.distinct().forEach(data -> System.out.println(data));
+		
 	}
 
 }

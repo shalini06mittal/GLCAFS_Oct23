@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-interface I1{
-	I1 m1(Predicate<?> p);
+interface I1<T>{
+	I1<T> m1(Predicate<?> p);
 	void process(Consumer<?> c);
 }
 
@@ -20,7 +20,7 @@ class MyList{
 	{
 		return nos.get(index);
 	}
-	public I1 stream()
+	public I1<Integer> stream()
 	{
 		return null;
 	}
