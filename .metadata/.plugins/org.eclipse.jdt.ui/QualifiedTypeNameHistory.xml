@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
-    <fullyQualifiedTypeName name="java.util.TreeSet"/>
-    <fullyQualifiedTypeName name="com.test.MyComparator"/>
-    <fullyQualifiedTypeName name="java.util.Map"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="java.util.function.BiFunction"/>
-    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
     <fullyQualifiedTypeName name="java.util.TreeMap"/>
     <fullyQualifiedTypeName name="java.util.function.BiConsumer"/>
     <fullyQualifiedTypeName name="com.generics.MyGenerics"/>
@@ -60,4 +53,11 @@
     <fullyQualifiedTypeName name="com.sync.Bank"/>
     <fullyQualifiedTypeName name="com.deadlock.Track"/>
     <fullyQualifiedTypeName name="java.lang.Runnable"/>
+    <fullyQualifiedTypeName name="com.interthreadcomm.Shop"/>
+    <fullyQualifiedTypeName name="com.interthreadcomm.Consumer"/>
+    <fullyQualifiedTypeName name="com.interthreadcomm.Producer"/>
+    <fullyQualifiedTypeName name="com.lambda.PrintableI"/>
+    <fullyQualifiedTypeName name="com.lambda.PrintablePrinterI"/>
+    <fullyQualifiedTypeName name="com.lambda.BasicLambda"/>
+    <fullyQualifiedTypeName name="com.lambda.Printable"/>
 </qualifiedTypeNameHistroy>
