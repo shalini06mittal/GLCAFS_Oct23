@@ -110,6 +110,12 @@ public class StreamDemo {
 			return element.substring(2);
 		})
 		.forEach(item-> System.out.println(item));
+		
+		int numbers[]={12,34,45,1,9,56,8};
+		System.out.println(Arrays.stream(numbers).filter(no->no%2!=0).map(n->n*n).max().getAsInt());
+//		int
+//		maxSqr=Arrays.stream(numbers).filter(no->no%2!=0).map(n->n*n).max().getAsInt();System.out.println("Squareofmaxoddnumber:"+maxSqr);}}—---------------------------------------------------------—----------------------------------------------------------------
+
 	}
 	
 	long counter;

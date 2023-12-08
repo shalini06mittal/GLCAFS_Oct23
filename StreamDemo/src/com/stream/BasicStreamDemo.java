@@ -29,6 +29,8 @@ public class BasicStreamDemo {
 		nos.add(3);
 		nos.add(6);
 		
+		
+		
 //		for(int i=0;i<nos.size();i++)
 //			System.out.println(nos.get(i));
 //		
