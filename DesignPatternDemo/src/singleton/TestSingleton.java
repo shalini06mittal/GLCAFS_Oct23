@@ -16,7 +16,7 @@ public class TestSingleton {
 		LazySingletonInstance ob2 = LazySingletonInstance.getInstance();
 		System.out.println(ob2.hashCode());
 		ob1.m1();
-	
+		
 	}
 
 }

@@ -17,11 +17,17 @@ package singleton;
 public class LazySingletonInstance {
 
 	private LazySingletonInstance() {
-		System.out.println("lazy construtcot");
+		System.out.println("lazy construtcor");
 	}
 	public void m1() {
 		System.out.println("m1 called");
 	}
+	
+	public static void lazy()
+	{
+		System.out.println("lazy method called");
+	}
+	
 	private static LazySingletonInstance instance ;
 	public static LazySingletonInstance getInstance()
 	{
