@@ -6,6 +6,7 @@ import java.util.List;
 public class Order {
 	
 	private String orderid;
+	// has - a
 	private Customer customer;
 	private String deliveryaddrr;
 	private LocalDateTime orderdate;

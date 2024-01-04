@@ -33,7 +33,7 @@ public class Client {
 
 		System.out.println("######################");
 		OrderDatabase orderDatabase = new OrderDatabase();
-		for(Order order : orderDatabase.getOrderDetailsForCustomer(1))
+		for(Order order : orderDatabase.getOrderDetailsForCustomer1(1))
 		{
 			System.out.println("\n-----------------------------------------------------------------------------------------------\n");
 			System.out.println("Order Id "+order.getOrderid());
@@ -52,6 +52,7 @@ public class Client {
 
 		}
 		System.out.println();
+		System.out.println("######################");
 		CustomerService service = new CustomerService();
 		for(Order order : service.getAllOrderForCustomer(4))
 		{
@@ -71,6 +72,8 @@ public class Client {
 			System.out.println("\n-----------------------------------------------------------------------------------------------\n");
 
 		}
+		System.out.println("######################");
+		System.out.println(orderDatabase.getNextOrderid());
 	}
 
 }

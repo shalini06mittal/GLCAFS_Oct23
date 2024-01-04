@@ -39,4 +39,14 @@ public class LineItemDataBase {
 		}
 		return lineItems;
 	}
+	
+	public boolean inserLineItems(List<LineItem> items)
+	{
+		String sql = "insert into lineitem values(?,?,?,?)";
+		for(LineItem item: items) {
+			
+		}
+		return true;
+	}
+	
 }

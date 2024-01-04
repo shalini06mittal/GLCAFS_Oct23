@@ -2,6 +2,7 @@ package model;
 
 public class LineItem {
 	
+	// has - a
 	private Item item;
 	private Order order;
 	private double price;

@@ -1,6 +1,7 @@
 package com.db;
 
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.enitty.Locations;
+import com.mysql.cj.xdevapi.DbDoc;
 
 
 public class LocationDB {
@@ -16,6 +18,33 @@ public class LocationDB {
 	// insert
 	Connection conn = MyConnection.getConnection();
 
+	public void metadata()
+	{
+		 try {
+		 DatabaseMetaData dbData =conn.getMetaData();
+		 System.out.println("Driver name "+dbData.getDriverName());
+		 System.out.println("Driver version "+dbData.getDriverVersion());
+		 System.out.println("usernmae "+dbData.getUserName());
+		 System.out.println("product name "+dbData.getDatabaseProductName());
+		 
+		 System.out.println();
+		 ResultSet rs = dbData.getTables("ecommerce", null, null, new String[] {"TABLE","VIEW"});
+		 while(rs.next())
+		 {
+			 System.out.println(rs.getString(1) + " "+rs.getString(3) + " "+rs.getString(4));
+			 
+		 }
+		 System.out.println();
+		 ResultSet rs1 = dbData.getColumns("ecommerce", null, "student", null);
+		 while(rs1.next()) {
+			 System.out.println(rs1.getString(4)+" "+rs1.getString("COLUMN_SIZE")+" "+rs1.getString(5));	 
+		 }
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	
+	}
+	
 	public boolean insertLocationsUsingStatement(Locations obj) {
 
 		String sql = "insert into locations"

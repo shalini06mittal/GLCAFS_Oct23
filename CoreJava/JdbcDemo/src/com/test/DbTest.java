@@ -29,11 +29,13 @@ public class DbTest {
 //		ob.setStreet_address("423 Normandie Blvd");
 //		ob.setPostal("12345");
 //		db.updateLocationsUsingPrepareStatement(ob);
-		for(Locations ob: db.getAllLocations())
-			System.out.println(ob);
-		System.out.println();
-		for(Locations ob: db.getAllLocationsByCountryId("NP"))
-			System.out.println(ob);
+//		for(Locations ob: db.getAllLocations())
+//			System.out.println(ob);
+//		System.out.println();
+//		for(Locations ob: db.getAllLocationsByCountryId("NP"))
+//			System.out.println(ob);
+		
+		db.metadata();
 		
 	}
 
