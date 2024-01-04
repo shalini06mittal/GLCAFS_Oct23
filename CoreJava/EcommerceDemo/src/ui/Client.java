@@ -16,16 +16,7 @@ public class Client {
 		// TODO Auto-generated method stub
 		CustomerDatabase database = new CustomerDatabase();
 
-
-		Customer customer = new Customer();
-		customer.setCname("Rohan");
-		customer.setCity("Hyderabad");
-		customer.setCountry("India");
-		customer.setEmail("rohan@hcl.com");
-		customer.setGst("GST97997RN");
-		customer.setPassword("rohan");
-		customer.setPhone("7676767676");
-		//database.insertCustomer(customer);
+		
 		System.out.println();
 		for(Customer customer1 : database.getAllCustomers())
 			System.out.println(customer1);
