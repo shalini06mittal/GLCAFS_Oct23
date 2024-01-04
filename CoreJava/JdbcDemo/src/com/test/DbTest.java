@@ -24,11 +24,17 @@ public class DbTest {
 		//db.insertLocationsUsingStatement(new Locations("23 St Drive", "897651", "Washington", "USA", "US"));
 		//db.insertLocationsUsingPrepareStatement(new Locations("101 Dahram street", "41231", "Pune", "Mah", "IN"));
 		//db.deleteLocationsById(427);
-		Locations ob = new Locations();
-		ob.setLocation_id(427);
-		ob.setStreet_address("423 Normandie Blvd");
-		ob.setPostal("12345");
-		db.updateLocationsUsingPrepareStatement(ob);
+//		Locations ob = new Locations();
+//		ob.setLocation_id(427);
+//		ob.setStreet_address("423 Normandie Blvd");
+//		ob.setPostal("12345");
+//		db.updateLocationsUsingPrepareStatement(ob);
+		for(Locations ob: db.getAllLocations())
+			System.out.println(ob);
+		System.out.println();
+		for(Locations ob: db.getAllLocationsByCountryId("NP"))
+			System.out.println(ob);
+		
 	}
 
 }
