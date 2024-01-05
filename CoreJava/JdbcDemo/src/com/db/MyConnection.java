@@ -16,7 +16,8 @@ public class MyConnection {
 	 * 3. Load the driver
 	 */
 	
-	public static Connection getConnection()
+	private static Connection conn = createConnection();
+	private static Connection createConnection()
 	{
 		Connection conn = null;
 		try {
@@ -37,5 +38,14 @@ public class MyConnection {
 		}
 		return conn;
 	}
+	public static Connection getConnection()
+	{
+		return conn;
+	}
 	
+	public static void closeConnection()
+	{
+
+		conn.close();
+	}
 }
