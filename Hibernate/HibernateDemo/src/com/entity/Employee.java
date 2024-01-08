@@ -6,14 +6,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 // tells hibernate that Employee is a database managed entity
+// POJO
 @Entity
-@Table(name="emp")
+// best practice use @Table
+@Table(name="emp") // optional only, use it in case the table name is different than classname
 public class Employee {
 
 	// for primary key
 	@Id
 	@Column(name="id")
 	private int empid;
+	// use @Column either to provide other constraints for the column or if column name is different than the property name
 	@Column(name="empname", length = 100, nullable = false)
 	private String ename;
 	private String city;
