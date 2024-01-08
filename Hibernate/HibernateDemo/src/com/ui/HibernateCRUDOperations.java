@@ -2,6 +2,10 @@ package com.ui;
 
 import java.util.List;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,9 +14,30 @@ import org.hibernate.cfg.Configuration;
 
 import com.entity.Employee;
 
-public class HubernateClient {
+public class HibernateCRUDOperations {
 
 	private static SessionFactory sessionFactory ;
+	
+	/**
+	 * openSession[OS] vs getCurrentSession[CS]
+	 * 
+	 * OS : always creates a new Session object
+	 * needs to be explicitly closed
+	 * No extra configuration required in the XML file
+	 * performance it is slower in a single threaded environment
+	 * 
+	 * 
+	 * in a single threaded environment
+	 * CS : create a new session object if it does not exist
+	 * need not be closed explicitly as hibernate takes care of it internally
+	 * Requires an extra configuration in the XML file : current_session_contet_class
+	 * it is faster
+	 * returns a Session instance that is bound to a particular context
+	 * 
+	 * 
+	 * @param args
+	 */
+	
 	public static void main(String[] args) {
 
 		//load the xml file and do all the pre-initialization to connect with the database
@@ -45,10 +70,10 @@ public class HubernateClient {
 			System.out.println(emp);
 		
 		System.out.println();
-		for(Employee emp :getAllEmployeesByCity("Pune") )
-
-			System.out.println(emp);
-		
+//		for(Employee emp :getAllEmployeesByCity("Pune") )
+//
+//			System.out.println(emp);
+//		
 		System.out.println();
 		for(String name :getAllEmployeesName() )
 
@@ -64,6 +89,8 @@ public class HubernateClient {
 		session.close();
 		return emps;
 	}
+	
+
 	public static List<Employee> getAllEmployeesByCity(String city)
 	{
 		Session session = sessionFactory.openSession();
@@ -74,6 +101,7 @@ public class HubernateClient {
 		session.close();
 		return emps;
 	}
+	// PROJECTION OF COLUMN
 	public static List<String> getAllEmployeesName()
 	{
 		Session session = sessionFactory.openSession();
