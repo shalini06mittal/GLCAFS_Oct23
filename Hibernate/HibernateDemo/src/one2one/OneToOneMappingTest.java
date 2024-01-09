@@ -67,8 +67,13 @@ public class OneToOneMappingTest {
 		//System.out.println(s);
 		System.out.println(s.getSname()+" "+s.getEmail().getStudentemail());//+" "+s.getAddress().getCity());
 		System.out.println(s.getAddr().getAddressid()+" "+s.getAddr().getCity());
-		System.out.println(s.getLibraryCard().getId());
-			
+		System.out.println(s.getLibraryCard().getId());//+" "+s.getLibraryCard().isActive());
+		session = sessionFactory.openSession();
+		LibraryCard ob =  session.get(LibraryCard.class, s.getLibraryCard().getId());// ob.id = 2
+		session.close();
+		System.out.println(ob.getStudent().getSname());
+		
+		
 	}
 	
 

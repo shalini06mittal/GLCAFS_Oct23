@@ -30,6 +30,7 @@ public class Student {
 	@JoinColumn(name="addrid")
 	private Address addr;
 	
+	// uni directional mapping
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="libcardid")
 	private LibraryCard libraryCard;

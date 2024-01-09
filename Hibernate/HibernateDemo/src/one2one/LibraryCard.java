@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +19,11 @@ public class LibraryCard {
 	private boolean isActive;
 	private LocalDate issueDate;
 	
+	// bidirectional mapping
+	// to tell hibernate not to create a FK relationship in the library_card table, use mappedBy
+	@OneToOne(mappedBy = "libraryCard")
+	private Student student;
+	
 	public LibraryCard() {
 		// TODO Auto-generated constructor stub
 	}
@@ -26,6 +32,14 @@ public class LibraryCard {
 		super();
 		this.isActive = isActive;
 		this.issueDate = issueDate;
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
 	}
 
 	public int getId() {
