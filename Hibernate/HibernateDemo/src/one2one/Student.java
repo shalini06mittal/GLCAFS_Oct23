@@ -2,6 +2,7 @@ package one2one;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,9 +25,14 @@ public class Student {
 	
 	// has - a
 	// one student can have only one address
-	@OneToOne
+	// default one to one does eager fetch 
+	@OneToOne//(fetch = FetchType.LAZY)
 	@JoinColumn(name="addrid")
 	private Address addr;
+	
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="libcardid")
+	private LibraryCard libraryCard;
 	
 	public Student() {
 		// TODO Auto-generated constructor stub
@@ -63,17 +69,27 @@ public class Student {
 		this.email = email;
 	}
 
-	public Address getAddress() {
+	
+	public Address getAddr() {
 		return addr;
 	}
 
-	public void setAddress(Address addr) {
+	public void setAddr(Address addr) {
 		this.addr = addr;
+	}
+
+	public LibraryCard getLibraryCard() {
+		return libraryCard;
+	}
+
+	public void setLibraryCard(LibraryCard libraryCard) {
+		this.libraryCard = libraryCard;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", sname=" + sname + ", email=" + email + ", address=" + addr + "]";
+		return "Student [id=" + id + ", sname=" + sname + ", email=" + email + ", addr=" + addr + ", libraryCard="
+				+ libraryCard + "]";
 	}
 	
 	

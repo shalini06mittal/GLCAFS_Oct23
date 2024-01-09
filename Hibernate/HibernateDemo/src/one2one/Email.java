@@ -24,6 +24,11 @@ public class Email {
 	public void setStudentemail(String studentemail) {
 		this.studentemail = studentemail;
 	}
+
+	@Override
+	public String toString() {
+		return "Email [studentemail=" + studentemail + "]";
+	}
 	
 	
 }

@@ -36,6 +36,7 @@
  		<mapping class = "com.entity.Employee"/>
  		<mapping class = "one2one.Student"/>
  		<mapping class = "one2one.Address"/>
+ 		<mapping class = "one2one.LibraryCard"/>
 
     </session-factory>
 
