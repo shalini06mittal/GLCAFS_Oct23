@@ -1,5 +1,6 @@
 package one2one;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -26,7 +27,7 @@ public class Student {
 	// has - a
 	// one student can have only one address
 	// default one to one does eager fetch 
-	@OneToOne//(fetch = FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.ALL)//(fetch = FetchType.LAZY)
 	@JoinColumn(name="addrid")
 	private Address addr;
 	

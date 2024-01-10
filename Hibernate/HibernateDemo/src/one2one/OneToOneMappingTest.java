@@ -20,19 +20,22 @@ public class OneToOneMappingTest {
 		Configuration configuration = new Configuration().configure("hibernate.cfg.xml");
 		sessionFactory = configuration.buildSessionFactory();
 
-		Address a1 = new Address("Pune", "India");
+		Address a1 = new Address("Delhi", "India");
 		
 		Email e1 = new Email();
-		e1.setStudentemail("riya@gmail.com");
+		e1.setStudentemail("ranjitha@gmail.com");
 		
-		Student s1 = new Student("Riya", e1, a1);
+		Student s1 = new Student("Ranjitha", e1, a1);
 		
-//		Session session = sessionFactory.openSession();
-//		Transaction tx = session.beginTransaction();
-//		session.save(a1);// serialization
-//		session.save(s1);
-//		tx.commit();
-//		session.close();		
+		//TransientObjectException: object references an unsaved transient instance - 
+		//save the transient instance before flushing: one2one.Address
+		
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		//session.save(a1);// serialization
+		session.save(s1);
+		tx.commit();
+		session.close();		
 				
 //		Address a2 = new Address("Pune", "India");
 //		System.out.println(a2.getAddressid());
@@ -61,17 +64,17 @@ public class OneToOneMappingTest {
 		 * Get details of the student with id as 1
 		 * By default hibernate performs join between student and address and fetches all the data
 		 */
-		Session session = sessionFactory.openSession();
-		Student s = session.get(Student.class, 1);
-		session.close();
-		//System.out.println(s);
-		System.out.println(s.getSname()+" "+s.getEmail().getStudentemail());//+" "+s.getAddress().getCity());
-		System.out.println(s.getAddr().getAddressid()+" "+s.getAddr().getCity());
-		System.out.println(s.getLibraryCard().getId());//+" "+s.getLibraryCard().isActive());
-		session = sessionFactory.openSession();
-		LibraryCard ob =  session.get(LibraryCard.class, s.getLibraryCard().getId());// ob.id = 2
-		session.close();
-		System.out.println(ob.getStudent().getSname());
+//		Session session = sessionFactory.openSession();
+//		Student s = session.get(Student.class, 1);
+//		session.close();
+//		//System.out.println(s);
+//		System.out.println(s.getSname()+" "+s.getEmail().getStudentemail());//+" "+s.getAddress().getCity());
+//		System.out.println(s.getAddr().getAddressid()+" "+s.getAddr().getCity());
+//		System.out.println(s.getLibraryCard().getId());//+" "+s.getLibraryCard().isActive());
+//		session = sessionFactory.openSession();
+//		LibraryCard ob =  session.get(LibraryCard.class, s.getLibraryCard().getId());// ob.id = 2
+//		session.close();
+//		System.out.println(ob.getStudent().getSname());
 		
 		
 	}
