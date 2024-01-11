@@ -2,6 +2,7 @@ package manytomany;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class Books {
 	private String link;
 	private int pages;
 	private String title;
+	@Column(name="yearofpub")
 	private int year;
 	private int price;
 	@ManyToMany(mappedBy = "likedbooks")
@@ -128,7 +130,7 @@ public class Books {
 	@Override
 	public String toString() {
 		return "Books [id=" + id + ", author=" + author + ", imageLink=" + imageLink + ", title=" + title + ", price="
-				+ price + "]";
+				+ price +", year="+year+ "]";
 	}
 
 }

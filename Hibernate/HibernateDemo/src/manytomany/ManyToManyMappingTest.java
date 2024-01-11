@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 
@@ -65,10 +66,16 @@ public class ManyToManyMappingTest {
 		 * inner join likedbooks likedbooks3_ on users0_.email=likedbooks3_.useremail 
 		 * inner join books books4_ on likedbooks3_.bookid=books4_.id
 		 *  where users0_.email='a@a.c'
+		 *  
+		 *  select books0_.id as id1_0_, books0_.author as author2_0_, books0_.country as country3_0_, books0_.imageLink as imagelin4_0_, books0_.language as language5_0_, books0_.link as link6_0_, books0_.pages as pages7_0_, books0_.price as price8_0_, books0_.title as title9_0_, books0_.year as year10_0_ 
+		 *  from books books0_ inner join likedbooks users1_ on books0_.id=users1_.bookid 
+		 *  inner join users users2_ on users1_.useremail=users2_.email where users2_.email='a@a.c'
 		 */
 		List likedbooks = session1
-				.createQuery("select distinct u.likedbooks from Users u join u.likedbooks where u.email='a@a.c'")
+				.createQuery("select  u.title, u.author from Books u join u.users lb where lb.email='a@a.c'")
+				
 				.getResultList();
+		
 		
 		session1.close();
 		for(Object ob : likedbooks) {
@@ -80,8 +87,12 @@ public class ManyToManyMappingTest {
 		System.out.println();
 		// get list of all the users who liked a particular book
 		Session session2 = sessionFactory.openSession();
+//		List users = session2
+//				.createQuery("select distinct b.users from Books b join b.users where b.id=4")
+//				.getResultList();
+		
 		List users = session2
-				.createQuery("select distinct b.users from Books b join b.users where b.id=4")
+				.createQuery("select b from Users b join b.likedbooks lb where lb.id=4")
 				.getResultList();
 		
 		session2.close();
@@ -104,8 +115,6 @@ public class ManyToManyMappingTest {
 			System.out.println("Email "+ob[0]+" Book Id "+ob[1]);
 		}
 		session3.close();
-
-
 
 	}
 
