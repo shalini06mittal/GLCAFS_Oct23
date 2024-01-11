@@ -1,6 +1,9 @@
 package manytomany;
 
+
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.PostLoad;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="users")
@@ -24,6 +29,7 @@ public class Users {
 	inverseJoinColumns = @JoinColumn(name="bookid"),
 	joinColumns  = @JoinColumn(name="useremail"))
 	private List<Books> likedbooks;
+	
 	public Users() {
 		// TODO Auto-generated constructor stub
 	}

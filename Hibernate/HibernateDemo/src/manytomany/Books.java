@@ -125,10 +125,10 @@ public class Books {
 		this.price = price;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Books [id=" + id + ", author=" + author + ", imageLink=" + imageLink + ", title=" + title + ", price="
-//				+ price + "]";
-//	}
+	@Override
+	public String toString() {
+		return "Books [id=" + id + ", author=" + author + ", imageLink=" + imageLink + ", title=" + title + ", price="
+				+ price + "]";
+	}
 
 }
