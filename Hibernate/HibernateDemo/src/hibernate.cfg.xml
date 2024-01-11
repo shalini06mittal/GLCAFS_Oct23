@@ -37,8 +37,10 @@
  		<mapping class = "one2one.Student"/>
  		<mapping class = "one2one.Address"/>
  		<mapping class = "one2one.LibraryCard"/> -->
- 		<mapping class = "one2many.many2one.Customer"/>
-		<mapping class = "one2many.many2one.Account"/>
+ 		<!-- <mapping class = "one2many.many2one.Customer"/>
+		<mapping class = "one2many.many2one.Account"/> -->
+		<mapping class = "manytomany.Books"/>
+		<mapping class = "manytomany.Users"/>
 
     </session-factory>
 
