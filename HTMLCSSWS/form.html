@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMS</title>
+</head>
+<body>
+    <h1>FOrms Demo</h1>
+    
+    <form>
+        <div>
+            <label for="username">Name: </label>
+            <input type="text" id="username" placeholder="Enter name">
+        </div>
+        <div>
+            Password : <input type="password" placeholder="Enter password">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter Email">
+        </div>
+        <div>
+            <label for="age">Age: Should be between 18 and 30</label>
+            <input type="number" min="18" max="30">
+        </div>
+        <div>
+            Notification: 
+            SMS : <input type="checkbox" >
+            Phone : <input type="checkbox" >
+            Email : <input type="checkbox" >
+        </div>
+        <div>
+            <label for="members">Member?</label>
+            <input type="radio" name="members" checked> YES
+            <input type="radio" name="members"> NO
+        </div>
+        <div>
+            <select>
+                <option value="">India</option>
+                <option value="">USA</option>
+                <option value="">China</option>
+            </select>
+        </div>
+        <div>
+            <button>Click Me</button>
+            <input type="submit">            
+        </div>
+
+    </form>
+    
+</body>
+</html>
