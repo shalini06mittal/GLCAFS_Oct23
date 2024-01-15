@@ -1,0 +1,19 @@
+/*
+external stylesheet
+*/
+
+
+.c1{
+    padding: 10px;
+    margin: 20px;
+    background-color: blue;
+    /* width: 800px; */
+    width: 50%;
+}
+div#d1{
+    padding: 10px;
+    margin: 20px;
+    background-color: black;
+    /* width: 800px; */
+    width: 50%;
+} 
