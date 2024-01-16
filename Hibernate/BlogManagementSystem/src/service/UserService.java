@@ -1,8 +1,11 @@
 package service;
 
 import database.UserDatabase;
+import dto.BloggersDTO;
 import entity.Bloggers;
+import exception.BloggerLoginException;
 import exception.BloggerRegistrationException;
+import exception.EntityNotFoundException;
 
 public class UserService {
 
@@ -31,9 +34,30 @@ public class UserService {
 		return db.insertBlogger(bloggers);
 	}
 	
-	public boolean validateBlogger(String email, String password)
+	
+	public boolean validateBlogger(String email, String password) throws BloggerLoginException
 	{
-		db.getCredentials(email, password);
+		String credentials = db.getCredentials(email, password);
+		if(credentials == null)
+			throw new BloggerLoginException("Email does not exist");
+		else
+			if(! password.equals(credentials))
+				throw new BloggerLoginException("Invalid password");
 		return true;
+	}
+	public BloggersDTO getProfile(String email) throws EntityNotFoundException {
+		Bloggers bloggers = db.getBloggerProfile(email);
+		if(bloggers == null)
+			throw new EntityNotFoundException("Blogger with email "+email+" does not exist");
+		BloggersDTO dto = new BloggersDTO();
+		dto.setEmail(email);
+		dto.setFirstname(bloggers.getFirstname());
+		dto.setLastname(bloggers.getLastname());
+		dto.setJoinedOn(bloggers.getJoinedOn());
+		dto.setPhone(bloggers.getPhone());
+		return dto;
+	}
+	public Bloggers getBloggerByEmail(String email) {
+		return db.getBloggerProfile(email);
 	}
 }

@@ -9,6 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+/**
+ * database managed entity to store information about the bloggers
+ * @author Shalini
+ *
+ */
 
 @Entity
 @Table(name="bloggers")
@@ -23,6 +28,7 @@ public class Bloggers {
 	private String firstname;
 	private String lastname;
 	
+	// to store the joinedon as a timestamp with a default value of current time
 	@Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private LocalDate joinedOn;
 	
@@ -91,12 +97,21 @@ public class Bloggers {
 		this.joinedOn = joinedOn;
 	}
 	
+	
 //	@PrePersist
 //	protected void onCreate() {
 //	    if (joinedOn == null) {
 //	        joinedOn = LocalDate.now();
 //	    }
 //	}
+
+	public List<Blog> getBlogs() {
+		return blogs;
+	}
+
+	public void setBlogs(List<Blog> blogs) {
+		this.blogs = blogs;
+	}
 
 	@Override
 	public String toString() {

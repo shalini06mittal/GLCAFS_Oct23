@@ -2,6 +2,7 @@ package entity;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +16,11 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+/**
+ * database managed entity to store blogs created by bloggers
+ * @author Shalini
+ *
+ */
 @Entity
 @Table(name="blog")
 public class Blog {
@@ -29,15 +35,17 @@ public class Blog {
 	
 	private String imagelink;
 	
+	// to store the createdAt as a timestamp with a default value of current time
 	@Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	@CreationTimestamp
 	private LocalDateTime createdAt;
 	
+	// to let hibernate update only when a particular blog is updated
 	//@Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
 	@UpdateTimestamp
 	private LocalDateTime updatedAt;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="categoryid")
 	private Category category;
 	
@@ -45,6 +53,14 @@ public class Blog {
 	@JoinColumn(name="email",nullable = false)
 	private Bloggers createdBy;
 	
+	public String getImagelink() {
+		return imagelink;
+	}
+
+	public void setImagelink(String imagelink) {
+		this.imagelink = imagelink;
+	}
+
 	public Blog() {
 		// TODO Auto-generated constructor stub
 	}

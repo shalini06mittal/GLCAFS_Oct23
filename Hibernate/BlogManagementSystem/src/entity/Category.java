@@ -13,6 +13,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * database managed entity to store information about the category of blogs
+ * @author Shalini
+ *
+ */
 @Entity
 @Table(name="category")
 public class Category {

@@ -10,6 +10,7 @@ import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 
+import dto.BloggersDTO;
 import entity.Bloggers;
 import util.HibernateUtil;
 //https://www.dineshonjava.com/hibernate/understanding-restrictions/
@@ -33,17 +34,23 @@ public class UserDatabase {
         .uniqueResult() != null;
 		return exists;
 	}
-	public Object[] getCredentials(String email, String password)
+	public String getCredentials(String email, String password)
 	{
 		Session session = sessionFactory.openSession();
 		Criteria criteria = session.createCriteria(Bloggers.class)
-				.add(Restrictions.and(Restrictions.eq("email", email), Restrictions.eq("password", password)))
-				.setProjection(Projections.projectionList().add(Projections.property("email"))
+				.add( Restrictions.eq("email", email))
+				.setProjection(Projections.projectionList()
 						.add(Projections.property("password")));
-		
-		Object[] credentials = (Object[])criteria.list().get(0);
-		//System.out.println(credentials[0]+" "+ credentials[1]);
+		List credentials = criteria.list();
 		session.close();
-		return credentials;
+		if(credentials.size() == 0)
+			return null;
+		return (String)credentials.get(0);
+	}
+	public Bloggers getBloggerProfile(String email) {
+		Session session = sessionFactory.openSession();
+		Bloggers bloggers = session.get(Bloggers.class, email);
+		session.close();
+		return bloggers;
 	}
 }
