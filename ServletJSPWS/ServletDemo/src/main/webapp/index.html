@@ -9,5 +9,25 @@
 	<h1>Index Page</h1>
 	<a href="home.html">Home Page</a>
 	<a href="first">first Servlet</a>
+	<div>
+		<h1>POST FORM DEMO</h1>
+		<!--  http://localhost:8080/ServletDemo/first -->
+		<form action="first" method="post">
+			Username : <input type="text" name="username"/>
+			<br/>
+			Password : <input type="password" name="password"/>
+			<input type="submit"/>
+		</form>
+	</div>
+	<div>
+	<h1>GET FORM DEMO</h1>
+		<form action="first" method="get">
+		<!-- http://localhost:8080/ServletDemo/first?prodname=laptop -->
+			Product name : <input type="text" name="prodname"/>
+			<br/>
+			Product Info : <input type="text" name="prodinfo"/>
+			<input type="submit"/>
+		</form>
+	</div>
 </body>
 </html>
