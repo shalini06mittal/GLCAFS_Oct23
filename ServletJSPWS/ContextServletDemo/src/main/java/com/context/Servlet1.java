@@ -31,7 +31,8 @@ public class Servlet1 extends HttpServlet {
     	// TODO Auto-generated method stub
     	
     	super.init();
-    	System.out.println(getServletContext());
+    	System.out.println("1 "+getServletContext());
+    	//getServletContext().setInitParameter("", "");
     	getServletContext().setAttribute("banner", "HOT DEALS AND OFFERS");
     }
 	/**
@@ -39,6 +40,8 @@ public class Servlet1 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.println(getServletContext());
+		getServletContext().setAttribute("msg", "ENJOY");
 		ServletContext context = getServletContext();
 		String email = context.getInitParameter("admineamil");
 		PrintWriter out = response.getWriter();
@@ -46,6 +49,7 @@ public class Servlet1 extends HttpServlet {
 		response.setContentType("text/html");
 		out.println("<h1>COntact Admin: "+email+"</h1>");
 		out.println("<h1>"+getServletContext().getAttribute("banner")+"</h1>");
+		out.println("<h1>"+getServletContext().getAttribute("msg")+"</h1>");
 	}
 
 	/**

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.container {
+	width: 50%;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: black;
+	color: white;
+	font-size: 20px;
+}
+
+div {
+	margin:20px;
+}
+input[type='submit']{
+	
+	color:black;
+	background-color: white;
+	padding:5px;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<h1 style="text-align: center;">BMI CALCULATOR</h1>
+		<form action="bmicalc">
+			<div>
+				<label>Age (2-120):</label> <input type="number" name="age" min="2"
+					max="120" />
+			</div>
+			<div>
+				<label>Height in metres:</label> <input type="number" name="height" />
+			</div>
+			<div>
+				<label>Weight</label> Kg : <input type="radio" value="kg"
+					name="unit" /> Pounds : <input type="radio" value="pound"
+					name="unit" />
+			</div>
+			<div>
+				<input type="number" name="weight" />
+			</div>
+			<div>
+				<input type="submit" />
+			</div>
+		</form>
+	</div>
+</body>
+</html>
