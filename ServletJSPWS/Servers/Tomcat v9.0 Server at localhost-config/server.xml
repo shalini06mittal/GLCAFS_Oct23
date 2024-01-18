@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="ServletDemo" path="/ServletDemo" reloadable="true" source="org.eclipse.jst.jee.server:ServletDemo"/><Context docBase="ContextServletDemo" path="/ContextServletDemo" reloadable="true" source="org.eclipse.jst.jee.server:ContextServletDemo"/><Context docBase="ConfgServletDemo" path="/ConfgServletDemo" reloadable="true" source="org.eclipse.jst.jee.server:ConfgServletDemo"/><Context docBase="RequestDipatcherServletDemo" path="/RequestDipatcherServletDemo" reloadable="true" source="org.eclipse.jst.jee.server:RequestDipatcherServletDemo"/></Host>
+      <Context docBase="ServletDemo" path="/ServletDemo" reloadable="true" source="org.eclipse.jst.jee.server:ServletDemo"/><Context docBase="ContextServletDemo" path="/ContextServletDemo" reloadable="true" source="org.eclipse.jst.jee.server:ContextServletDemo"/><Context docBase="ConfgServletDemo" path="/ConfgServletDemo" reloadable="true" source="org.eclipse.jst.jee.server:ConfgServletDemo"/><Context docBase="RequestDipatcherServletDemo" path="/RequestDipatcherServletDemo" reloadable="true" source="org.eclipse.jst.jee.server:RequestDipatcherServletDemo"/><Context docBase="UrlHiddenServletDemo" path="/UrlHiddenServletDemo" reloadable="true" source="org.eclipse.jst.jee.server:UrlHiddenServletDemo"/></Host>
     </Engine>
   </Service>
 </Server>
