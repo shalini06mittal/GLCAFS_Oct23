@@ -29,7 +29,11 @@ public class DeleteBookServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int id = Integer.parseInt(request.getParameter("id"));
 		
+		BookServiceImpl bookServiceImpl = new BookServiceImpl();
+		bookServiceImpl.deleteById(id);
+		response.sendRedirect("../books/list");
 	
 	}
 

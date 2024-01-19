@@ -31,10 +31,10 @@
 		<form action="/LibraryManagement/books/edit" method="POST">
 
 			<!-- Add hidden form field to handle update -->
-			<input type="hidden" name="id" />
+			<input type="hidden" name="id" value="${Book.id}" />
 
 			<div class="form-inline">
-				<input type="text" name="name" 
+				<input type="text" name="name" value="${Book.name}"
 					class="form-control mb-4 col-4" placeholder="Name">
 
 
@@ -43,7 +43,7 @@
 
 			<div class="form-inline">
 
-				<input type="text" name="category" 
+				<input type="text" name="category" value="${Book.category}"
 					class="form-control mb-4 col-4" placeholder="Category">
 
 
@@ -52,14 +52,14 @@
 
 			<div class="form-inline">
 
-				<input type="text" name="author"
+				<input type="text" name="author" value="${Book.author}"
 					class="form-control mb-4 col-4" placeholder="Author">
 
 
 
 			</div>
 
-			<button type="submit" class="btn btn-info col-2">Update</button>
+			<button type="submit" class="btn btn-info col-2">Save</button>
 
 		</form>
 

@@ -31,7 +31,12 @@
 		<a href="/LibraryManagement/books/add"
 			class="btn btn-primary btn-sm mb-3"> Add Book </a>
 			
-			
+		
+		
+		<c:if test="${Books.size() == 0 }">
+			<h3>No books added Yet!!</h3>
+		</c:if>
+		<c:if test="${Books.size() != 0 }">
 		<table class="table table-bordered table-striped">
 			<thead class="thead-dark">
 				<tr>
@@ -43,10 +48,28 @@
 			</thead>
 
 			<tbody>
-				
+				<c:forEach items="${Books}" var="tempBook">
+					<tr>
+						<td><c:out value="${tempBook.name}" /></td>
+						<td><c:out value="${tempBook.category}" /></td>
+						<td><c:out value="${tempBook.author}" /></td>
+						<td>
+							<!-- Add "update" button/link --> <a
+							href="/LibraryManagement/books/edit?id=${tempBook.id}"
+							class="btn btn-info btn-sm"> Update </a> <!-- Add "delete" button/link -->
+							<a href="/LibraryManagement/books/delete?id=${tempBook.id}"
+							class="btn btn-danger btn-sm"
+							>
+								Delete </a>
+
+						</td>
+
+					</tr>
+				</c:forEach>
 
 			</tbody>
 		</table>
+		</c:if>
 
 	</div>
 

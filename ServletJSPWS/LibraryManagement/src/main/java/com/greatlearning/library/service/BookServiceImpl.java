@@ -62,7 +62,6 @@ public class BookServiceImpl implements BookService {
 
 	}
 
-	@Transactional
 	public void deleteById(int id) {
 
 		Session session = sessionFactory.openSession();
@@ -79,34 +78,6 @@ public class BookServiceImpl implements BookService {
 
 	}
 
-	@Transactional
-	public List<Book> searchBy(String Name, String Author) {
-
-		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction();
-		String query = "";
-		if (Name.length() != 0 && Author.length() != 0)
-			query = "from Book where name like '%" + Name + "%' or author like '%" + Author + "%'";
-		else if (Name.length() != 0)
-			query = "from Book where name like '%" + Name + "%'";
-		else if (Author.length() != 0)
-			query = "from Book where author like '%" + Author + "%'";
-		else
-			System.out.println("Cannot search without input data");
-
-		List<Book> book = session.createQuery(query).list();
-
-		tx.commit();
-		session.close();
-
-		return book;
-	}
-
-	public void print(List<Book> book) {
-
-		for (Book b : book) {
-			System.out.println(b);
-		}
-	}
+	
 
 }

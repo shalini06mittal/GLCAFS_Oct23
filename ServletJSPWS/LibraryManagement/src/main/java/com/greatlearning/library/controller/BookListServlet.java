@@ -20,22 +20,17 @@ import com.greatlearning.library.service.BookServiceImpl;
 public class BookListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public BookListServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-        
-        
-    }
    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		BookServiceImpl ob = new BookServiceImpl();
+		List<Book> theBooks = ob.findAll();
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../list-Books.jsp");
+		request.setAttribute("Books", theBooks);
+		dispatcher.forward(request, response);
 	}
 
 	

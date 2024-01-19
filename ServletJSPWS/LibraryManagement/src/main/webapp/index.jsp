@@ -8,6 +8,7 @@
 </head>
 <body>
 <h3>Welcome to the Library Management Portal</h3>
-<a href = "books/list">Book Portal</a>
+<!--  BookListServlet -->
+<a href = "books/list">Click here to go to the main page</a>
 </body>
 </html>

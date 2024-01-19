@@ -31,7 +31,13 @@ public class EditBookServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int id = Integer.parseInt(request.getParameter("id"));
+		BookServiceImpl bookService = new BookServiceImpl();
+		Book theBook = bookService.findById(id);
 		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../Bookedit-form.jsp");
+		request.setAttribute("Book", theBook);
+		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -39,7 +45,17 @@ public class EditBookServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		int id = Integer.parseInt(request.getParameter("id"));
+		String name = request.getParameter("name");
+		String category= request.getParameter("category");
+		String author = request.getParameter("author");
+
+		Book book = new Book(name, category, author);
+		book.setId(id);
+	
+		BookServiceImpl bookServiceImpl = new BookServiceImpl();
+		bookServiceImpl.save(book);
+		response.sendRedirect("../books/list");
 	}
 
 }

@@ -31,7 +31,8 @@ public class AddBookServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../Book-form.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -39,7 +40,15 @@ public class AddBookServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 
+		 String name = request.getParameter("name");
+		String category= request.getParameter("category");
+		String author = request.getParameter("author");
 		
+		Book book = new Book(name, category, author);
+		
+		BookServiceImpl bookServiceImpl = new BookServiceImpl();
+		bookServiceImpl.save(book);
+		response.sendRedirect("../books/list");
 	}
 
 }
